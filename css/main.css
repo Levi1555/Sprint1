@@ -1,0 +1,83 @@
+table {
+    display: flex;
+    background-color: rgb(95, 160, 98);
+    width: fit-content;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-color: black;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timer {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-emphasis-color: rgb(137, 167, 137);
+    border-color: black;
+    border-style: solid;
+}
+
+.cell {
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    font-weight: bold;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(222, 16, 230, 0.5)
+}
+
+.not-pressed {
+    background-color: rgba(119, 118, 122, 0.774)
+}
+
+.not-pressed {
+    background-color: (255, 255, 255, 0.5)
+}
+
+.hover {
+    background-color: rgba(233, 16, 16, 0.774)
+}
+
+.level-btns {
+    width: fit-content;
+}
+
+.negs1 {
+    color: blue
+}
+
+.negs2 {
+    color: yellow
+}
+
+.negs3 {
+    color: orange
+}
+
+.negs4 {
+    color: white
+}
+
+.negs5 {
+    color: purple
+}
+
+.negs6 {
+    color: khaki
+}
+
+.negs7 {
+    color: firebrick
+}
+
+.negs8 {
+    color: rosybrown
+}
+
+.negs0 {
+    color: black
+}
