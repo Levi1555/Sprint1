@@ -1,0 +1,8 @@
+need to add:
+1. the first mine should not be a mine
+2. in the render- combine al cases by adding to the class var
+3. Clicking the Safe-Click button will mark a random covered cell (for a few seconds) that is safe to click (does not contain a MINE).
+4. Create a “manually create” mode in which user first positions the mines (by clicking cells) and then plays.
+5. 7 boom
+
+

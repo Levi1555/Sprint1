@@ -16,31 +16,32 @@ var gMinesLocations
 var gLevel = [{ size: 4, mines: 2 }, { size: 8, mines: 12 }, { size: 12, mines: 30 }]
 var gGame = { isOn: false, shownCount: 0, markedCount: 0, secsPassed: 0, lives: 3 }
 var gInterval
-
+var isFirstPress = true
 
 
 function init(level) {
     gGame = { isOn: false, shownCount: 0, markedCount: 0, secsPassed: 0, lives: 3 }
     clearInterval(gInterval)
     gBoard = buildBoard(level)
-    renderBoard(level)
+        //1 renderBoard(level)
     renderSmile(REG_SMILE)
 }
 
 function buildBoard(level) {
     gBoard = createMat(gLevel[level].size, gLevel[level].size)
-    gMinesLocations = minesLocation(level)
-    insertMineInBoard()
-    insertBlanksInBoard(level)
+        //1 gMinesLocations = minesLocation(level)
+        //1 insertMineInBoard()
+        //1 insertBlanksInBoard(level)
     return gBoard
 }
 
 //return mines locations
-function minesLocation(level) {
+function minesLocation(level, firstIIND, firstJind) {
     var emptyCells = getCells(gBoard, '')
     var minesLocations = []
     for (var i = 0; i < gLevel[level].mines; i++) {
         var emptyLocation = getRndInteger(0, emptyCells.length - 1)
+        console.log();
         minesLocations.push(emptyCells[emptyLocation])
         emptyCells.splice(emptyLocation, 1)
     }
@@ -49,7 +50,7 @@ function minesLocation(level) {
 
 //enter the mines to the board:
 function insertMineInBoard() {
-    for (var i = 0; i < gMinesLocations.length; i++) { ///
+    for (var i = 0; i < gMinesLocations.length; i++) {
         var panel = {
             minesAroundCount: 0,
             isShown: false,
@@ -126,7 +127,6 @@ function renderBoard(level) {
     strHTML += '</table>'
     var elTable = document.querySelector('.board');
     document.addEventListener('contextmenu', elTable => elTable.preventDefault());
-    //elTable.preventDefault()
     elTable.innerHTML = strHTML;
     renderLives()
 
@@ -187,6 +187,13 @@ function renderCell(elCell, i, j, level) {
 }
 
 function cellClicked(elCell, i, j, level) {
+    if (isFirstPress) {
+        gMinesLocations = minesLocation(level, i, j)
+        insertMineInBoard()
+        insertBlanksInBoard(level)
+        renderBoard(level)
+        isFirstPress = false
+    }
     if (gGame.lives === 0) return
     if (!gGame.isOn) startTimer()
     if (gBoard[i][j].isShown) return
@@ -212,25 +219,26 @@ function checkGameOver(level) {
         console.log('game Over - you lost')
         clearInterval(gInterval)
         renderSmile(SAD_SMILE)
-        gGame.isOn = false
             //  return true
     } else if (Math.pow(gLevel[level].size, 2) === gGame.shownCount + gGame.markedCount) {
         console.log('game Over - you won')
         clearInterval(gInterval)
         renderSmile(HAPPY_SMILE)
-        gGame.isOn = false
     }
 }
 
 
 function rightClick(elm, i, j, level) {
-    if (gBoard[i][j].isShown || !gGame.isOn) return
+    if (gBoard[i][j].isShown) return
     else {
         gBoard[i][j].isRightClick = true
         renderBoard(level)
     }
 }
 
+function expandShown(board, elCell, i, j) {
+
+}
 
 function cellEnter(elCell, i, j) {
 

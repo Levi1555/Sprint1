@@ -10,16 +10,68 @@ table {
     margin-right: auto;
 }
 
+.heart {
+    margin: 0;
+    text-align: start;
+    font-size: 100px;
+    width: 50px;
+    height: 50px;
+    color: red
+}
+
+.timer-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: fit-content;
+    text-emphasis-color: rgb(137, 167, 137);
+    font-size: 35px;
+    color: cornsilk
+}
+
+.smile {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 120px;
+}
+
 .timer {
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
     width: fit-content;
     text-emphasis-color: rgb(137, 167, 137);
     border-color: black;
     border-style: solid;
+    border-spacing: 50px;
+    font-size: 35px;
+    color: cornsilk
+}
+
+.footer {
+    font-size: 25px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(37, 94, 49, 0.459);
+    color: white;
+    text-align: right;
+    margin-right: 500px;
+}
+
+.level-btns {
+    margin-left: 500px;
+    margin-bottom: 50px;
+    font-size: 70px;
 }
 
 .cell {
+    border: radius 45px;
     text-align: center;
     border-color: black;
     border-style: solid;
@@ -34,16 +86,12 @@ table {
     background-color: rgba(119, 118, 122, 0.774)
 }
 
-.not-pressed {
+.pressed {
     background-color: (255, 255, 255, 0.5)
 }
 
 .hover {
     background-color: rgba(233, 16, 16, 0.774)
-}
-
-.level-btns {
-    width: fit-content;
 }
 
 .negs1 {
@@ -80,4 +128,9 @@ table {
 
 .negs0 {
     color: black
+}
+
+.mine {
+    width: 40px;
+    height: 40px;
 }

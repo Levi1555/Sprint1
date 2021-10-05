@@ -46,17 +46,11 @@ function shuffle(array) {
 function startTimer() {
     var elTimer = document.querySelector('.timer');
     var timestamp = Date.now();
-
     gInterval = setInterval(() => {
-        var time = `${((Date.now() - timestamp) / 1000).toFixed(3)}`;
-        elTimer.innerText = 'timer: ' + time;
+        var time = `${((Date.now() - timestamp) / 1000).toFixed(2)}`;
+        elTimer.innerText = '  timer: ' + time + '  ';
     }, 10);
 }
-
-// //function init() {
-//     changeDifficulty(16);
-// }
-
 
 
 function renderNums() {
@@ -85,4 +79,8 @@ function changeDifficulty(size) {
     renderNums();
     var elTimerDiv = document.querySelector('.timer');
     elTimerDiv.innerHTML = '';
+}
+
+function myFunction() {
+    console.log('5');
 }
