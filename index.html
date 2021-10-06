@@ -7,32 +7,41 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="init(1)" style="background-image: url('img/HK mine.png'); background-repeat: no-repeat; background-size: 2500px;background-position: center;">
-    <h2><span timer-container><div class="heart"></div></span></h2>
+<!-- <body onload="init(1)" style="background-image: url('img/HK mine.png'); background-repeat: no-repeat; background-size: 2500px;background-position: center;"> -->
+
+<body onload="init(1)"></body>
+<!-- <h2><span timer-container></span></h2> -->
+<div class="bgrdImg" style="background-image: url('img/HK mine.png'); background-repeat: no-repeat; background-size: 2500px;background-position: center;">
+    >
+
     <div>
-        <div class="level-btns">
-            <h5 style="margin: 0px; font-size: 30px">Choose Level:</h5>
-            <button onclick="init(0)">Beginner (4*4)</button>
-            <button onclick="init(1)">Medium (8*8)</button>
-            <button onclick="init(2)">Expert (12*12)</button>
-            <button class="pause" onclick="gamePaused(gGame.isPause,this,gGame.secsPassed)">Pause</button>
-        </div>
-        <div class="timer-container">
-            <h2 class="smile" onclick="init(1)">😎</h2>
-
-            <h2 class="timer">timer: 0.00</h2>
-        </div>
-        <div class="board">
-            this is the board
-        </div>
-
+        <p style="margin: 0px; font-size: 30px;vertical-align: bottom; color:crimson">Choose Level:</p>
+        <button onclick="init(0)" class="buttony" style="width: 20%; margin-left: 20%; margin-right: 60%;">Beginner(4*4)</button>
+        <button onclick="init(1)" class="buttony" style="width: 20%; margin-left: 40%; margin-right: 40%;">Medium (8*8)</button>
+        <button onclick="init(2)" class="buttony" style="width: 20%; margin-left: 60%; margin-right: 20%;">Expert (12*12)</button>
     </div>
-    <div class="footer">
-        <p>Avi Levi</p>
+    <div>
+        <button class=" pause " align=" center " onclick=" gamePaused(gGame.isPause,this,gGame.secsPassed) ">Pause</button>
     </div>
-    <script src="js/main.js"></script>
-    <script src="js/util.js"></script>
+    <div>
+        <table class=" timer-container ">
+            <td class=" timer " style=" width: 38% ">timer: 0.00</td>
+            <td class=" smile " onclick=" init(1) " style=" width: 24% ">😎</td>
+            <td class=" heart " style=" width: 38% "></td>
+        </table>
+    </div>
+    <div class=" board ">
+    </div>
+
+</div>
+<div class=" footer ">
+    <p>Avi Levi</p>
+</div>
+<script src=" js/main.js "></script>
+<script src=" js/util.js "></script>
 </body>
 
 
 </html>
+
+/* width: 33%; margin-left: 33%; margin-right: 33%;

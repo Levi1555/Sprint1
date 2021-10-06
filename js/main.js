@@ -143,10 +143,10 @@ function renderLives() {
     var livesString = ''
     if (i < gGame.lives === 0) livesString = ''
     for (var i = 0; i < gGame.lives; i++) {
-        livesString += HEART + '                  '
+        livesString += HEART + ' '
     }
-    strHTML = `<p style="white-space:nowrap;">${livesString}</p>`
-    elLives.innerHTML = strHTML;
+    strHTML = `${ livesString }`
+    elLives.innerText = strHTML;
 }
 
 function renderSmile(smile) {
